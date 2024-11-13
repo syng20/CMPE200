@@ -1,0 +1,4 @@
+Vivado Simulator 2019.1
+Time resolution is 1 ps
+$finish called at time : 720 ns : File "C:/Users/saman/Documents/Coding/CMPE200/Assignment_06/Assignment_06/Assignment_06.srcs/sources_1/imports/MIPS_single_cycle_patched/single_cycle_mips_source_initial/testbench/tb_mips_top.v" Line 51
+$finish called at time : 720 ns : File "C:/Users/saman/Documents/Coding/CMPE200/Assignment_06/Assignment_06/Assignment_06.srcs/sources_1/imports/MIPS_single_cycle_patched/single_cycle_mips_source_initial/testbench/tb_mips_top.v" Line 51
