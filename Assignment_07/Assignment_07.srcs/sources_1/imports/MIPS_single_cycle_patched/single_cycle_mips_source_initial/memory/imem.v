@@ -6,7 +6,7 @@ module imem (
     reg [31:0] rom [0:63];
 
     initial begin
-        $readmemh ("C:/Users/saman/Documents/Coding/CMPE200/Assignment_06/Assignment_06/Assignment_06.srcs/sim_1/imports/MIPS_single_cycle_patched/single_cycle_mips_source_initial/memdat.dat", rom);
+        $readmemh ("D:/H L/Sam/Assignment_07/Assignment_07/Assignment_07.srcs/sim_1/imports/MIPS_single_cycle_patched/single_cycle_mips_source_initial/memdat.dat", rom);
     end
 
     assign y = rom[a];

@@ -1,3 +1,5 @@
+`timescale 1ns / 1ps 
+
 module datapath (
         input  wire        clk,
         input  wire        rst,
@@ -26,14 +28,17 @@ module datapath (
         output wire        we_dmM,
         output wire [31:0] wd_dmM,
         // EDIT 2: SIGNALS NEEDED FOR OTHER MODULES 
+        output wire        pc_src,
         input  wire        stallF, 
         input  wire        stallD, 
         input  wire        flushE, 
         output wire        dm2regE, 
         output wire [31:0] instrI, 
         output wire [31:0] instrE, 
-        input  wire        forwardAE, 
-        input  wire        forwardBE, 
+        input  wire  [1:0] forwardAE, 
+        input  wire  [1:0] forwardBE, 
+        output wire        we_regM, 
+        output wire        we_regW, 
         output wire [31:0] alu_outM, 
         output wire  [4:0] wa_rfM, 
         output wire  [4:0] wa_rfW
@@ -43,7 +48,6 @@ module datapath (
     // wires in IF stage
     wire  [4:0] wa_rf;
     wire [31:0] pc_plus4;
-    wire        pc_src;
     
     // wires in ID stage 
     wire [31:0] pc_plus4I;
@@ -67,7 +71,7 @@ module datapath (
     wire [31:0] pc_plus4E;
     wire [31:0] sext_immE;
     wire [31:0] ba;
-    wire [31:0] bta;
+    wire [31:0] btaE;
     wire [31:0] jtaE;
     wire [31:0] alu_paE;
     wire [31:0] alu_pb;
@@ -75,7 +79,7 @@ module datapath (
     wire        zero;
     wire [31:0] alu_hi;
     wire [31:0] alu_lo;
-    wire [31:0] pc_pre_preE; 
+//    wire [31:0] pc_pre_preE; 
     wire  [4:0] wa_rf_pre;
     wire [31:0] hi_regE; // EDIT 2: CHANGED NAMES 
     wire [31:0] lo_regE; // EDIT2: CHANGED NAMES 
@@ -94,14 +98,15 @@ module datapath (
     wire        mfloM; 
     wire        mfhiM; 
     wire [31:0] pc_plus4M;
+    wire [31:0] btaM; 
     wire [31:0] pc_pre;
+    wire [31:0] pc_next_pre; 
     wire [31:0] pc_next;
     wire [31:0] jtaM;
     wire [31:0] alu_paM; 
     wire [31:0] lo_regM; 
     wire [31:0] hi_regM; 
-    wire [31:0] pc_pre_preM; 
-    wire        we_regM; 
+//    wire [31:0] pc_pre_preM; 
     wire        zeroM; 
     
     
@@ -118,14 +123,13 @@ module datapath (
     wire [31:0] wd_rf_pre;
     wire [31:0] wd_rf_alum; 
     wire [31:0] wd_rf_pre_pre; 
-    wire        we_regW; 
     wire [31:0] rd_dmW;
     
     
     
-    assign pc_src = branchM & zeroM;
+    assign pc_src = (branchM & zeroM) | jumpM | jrM;
     assign ba = {sext_immE[29:0], 2'b00}; // EDIT 2: ADJUSTED WIRE NAMES AS NEEDED
-    assign jtaE = {pc_plus4E[31:28], instr[25:0], 2'b00}; // EDIT2: CHANGED NAME OF WIRES
+    assign jtaE = {pc_plus4E[31:28], instrE[25:0], 2'b00}; // EDIT2: CHANGED NAME OF WIRES
     
     
     // --- PC Logic --- //
@@ -147,14 +151,14 @@ module datapath (
     adder pc_plus_br (
             .a              (pc_plus4E), // EDIT 2: WIRE NAME CHANGE
             .b              (ba),
-            .y              (bta)
+            .y              (btaE)
         );
 
     mux2 #(32) pc_src_mux (
             .sel            (pc_src),
-            .a              (pc_plus4E),
-            .b              (bta),
-            .y              (pc_pre_preE)
+            .a              (pc_plus4),
+            .b              (pc_next_pre),
+            .y              (pc_next)
         );
     
     // EDIT 2: MOVED JUMP AND JR TO MEM STAGE
@@ -181,7 +185,7 @@ module datapath (
             .ra1            (instrI[25:21]), // EDIT 2: SPLIT
             .ra2            (instrI[20:16]), // EDIT 2: SPLIT
             .ra3            (ra3),
-            .wa             (wa_rf),
+            .wa             (wa_rfW),
             .wd             (wd_rf),
             .rd1            (rd1I), // EDIT 2: SPLIT
             .rd2            (rd2I), 
@@ -215,7 +219,7 @@ module datapath (
             .sext_imm_in    (sext_immI),
             .rd1_in         (rd1I),
             .rd2_in         (rd2I),
-            .instr_in       (instr), 
+            .instr_in       (instrI), 
             .dm2reg_out     (dm2regE),
             .we_dm_out      (we_dmE),
             .branch_out     (branchE),
@@ -318,7 +322,7 @@ module datapath (
             .mflo_in        (mfloE),
             .mfhi_in        (mfhiE),
             .pc_plus4_in    (pc_plus4E),
-            .pc_pre_pre_in  (pc_pre_preE), 
+            .bta_in         (btaE), 
             .jta_in         (jtaE),
             .zero_in        (zero), 
             .alu_out_in     (alu_outE),
@@ -337,7 +341,7 @@ module datapath (
             .mflo_out       (mfloM),
             .mfhi_out       (mfhiM),
             .pc_plus4_out   (pc_plus4M),
-            .pc_pre_pre_out (pc_pre_preM),
+            .bta_out        (btaM),
             .jta_out        (jtaM),
             .zero_out       (zeroM),
             .alu_out_out    (alu_outM),
@@ -354,13 +358,13 @@ module datapath (
             .sel            (jumpM),
             .a              (pc_pre),
             .b              (jtaM),
-            .y              (pc_next)
+            .y              (pc_next_pre)
         );
         
     // EDIT: ADDED MUX FOR jr
     mux2 #(32) pc_jr_mux (
             .sel            (jrM),
-            .a              (pc_pre_preM),
+            .a              (btaM),
             .b              (alu_paM),
             .y              (pc_pre)
         );

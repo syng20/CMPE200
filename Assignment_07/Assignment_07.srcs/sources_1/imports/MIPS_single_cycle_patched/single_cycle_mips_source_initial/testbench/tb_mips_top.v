@@ -1,3 +1,5 @@
+`timescale 1ns / 1ps 
+
 module tb_mips_top;
 
     reg         clk;
@@ -42,12 +44,14 @@ module tb_mips_top;
     
     initial begin
         reset;
-        for(i = 0; i < 13; i = i + 1)
-        begin
-            tick;
-        end
+        for(i = 0; i < 13; i = i + 1) tick;
         reset;
-        while(pc_current != 32'h48) tick;
+        i = 0; 
+        while(pc_current != 32'h3058) tick;
+        tick; 
+        tick; 
+        tick;
+        tick;
         $finish;
     end
 

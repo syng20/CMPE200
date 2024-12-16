@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Product Version: Vivado v2019.1 (64-bit)              -->
+<!-- Product Version: Vivado v2019.1.1 (64-bit)              -->
 <!--                                                         -->
 <!-- Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.   -->
 
-<Project Version="7" Minor="40" Path="C:/Users/saman/Documents/Coding/CMPE200/Assignment_07/Assignment_07/Assignment_07.xpr">
+<Project Version="7" Minor="40" Path="D:/H L/Sam/Assignment_07/Assignment_07/Assignment_07.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
     <Option Name="Id" Val="c55cac4e63b6464383bdd1b192495a0f"/>
@@ -17,7 +17,8 @@
     <Option Name="CompiledLibDirVCS" Val="$PCACHEDIR/compile_simlib/vcs"/>
     <Option Name="CompiledLibDirRiviera" Val="$PCACHEDIR/compile_simlib/riviera"/>
     <Option Name="CompiledLibDirActivehdl" Val="$PCACHEDIR/compile_simlib/activehdl"/>
-    <Option Name="BoardPart" Val="digilentinc.com:nexys-a7-100t:part0:1.3"/>
+    <Option Name="SimulatorLanguage" Val="Verilog"/>
+    <Option Name="BoardPart" Val=""/>
     <Option Name="ActiveSimSet" Val="sim_1"/>
     <Option Name="DefaultLib" Val="xil_defaultlib"/>
     <Option Name="ProjectType" Val="Default"/>
@@ -32,7 +33,7 @@
     <Option Name="DSAVendor" Val="xilinx"/>
     <Option Name="DSABoardId" Val="nexys-a7-100t"/>
     <Option Name="DSANumComputeUnits" Val="60"/>
-    <Option Name="WTXSimLaunchSim" Val="9"/>
+    <Option Name="WTXSimLaunchSim" Val="54"/>
     <Option Name="WTModelSimLaunchSim" Val="0"/>
     <Option Name="WTQuestaLaunchSim" Val="0"/>
     <Option Name="WTIesLaunchSim" Val="0"/>
@@ -78,6 +79,42 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
+      <File Path="$PSRCDIR/sources_1/imports/MIPS_single_cycle_patched/single_cycle_mips_source_initial/control_unit/auxdec.v">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../Assignment_06/Lab6_Attachment1/MIPS_single_cycle_patched/single_cycle_mips_source_initial/control_unit/auxdec.v"/>
+          <Attr Name="ImportTime" Val="1529302800"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/MIPS_single_cycle_patched/single_cycle_mips_source_initial/control_unit/controlunit.v">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../Assignment_06/Lab6_Attachment1/MIPS_single_cycle_patched/single_cycle_mips_source_initial/control_unit/controlunit.v"/>
+          <Attr Name="ImportTime" Val="1532882706"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/MIPS_single_cycle_patched/single_cycle_mips_source_initial/datapath/datapath.v">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../Assignment_06/Lab6_Attachment1/MIPS_single_cycle_patched/single_cycle_mips_source_initial/datapath/datapath.v"/>
+          <Attr Name="ImportTime" Val="1571709198"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/MIPS_single_cycle_patched/single_cycle_mips_source_initial/memory/dmem.v">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../Assignment_06/Lab6_Attachment1/MIPS_single_cycle_patched/single_cycle_mips_source_initial/memory/dmem.v"/>
+          <Attr Name="ImportTime" Val="1571713020"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
       <File Path="$PSRCDIR/sources_1/imports/MIPS_single_cycle_patched/single_cycle_mips_source_initial/datapath/dreg.v">
         <FileInfo>
           <Attr Name="ImportPath" Val="$PPRDIR/../../Assignment_06/Lab6_Attachment1/MIPS_single_cycle_patched/single_cycle_mips_source_initial/datapath/dreg.v"/>
@@ -89,6 +126,47 @@
       </File>
       <File Path="$PSRCDIR/sources_1/new/dreg_en.v">
         <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/new/forward_unit.v">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/new/hazard_unit.v">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/MIPS_single_cycle_patched/single_cycle_mips_source_initial/memory/imem.v">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../Assignment_06/Lab6_Attachment1/MIPS_single_cycle_patched/single_cycle_mips_source_initial/memory/imem.v"/>
+          <Attr Name="ImportTime" Val="1529321836"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/MIPS_single_cycle_patched/single_cycle_mips_source_initial/control_unit/maindec.v">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../Assignment_06/Lab6_Attachment1/MIPS_single_cycle_patched/single_cycle_mips_source_initial/control_unit/maindec.v"/>
+          <Attr Name="ImportTime" Val="1529302754"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/MIPS_single_cycle_patched/single_cycle_mips_source_initial/mips/mips.v">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../Assignment_06/Lab6_Attachment1/MIPS_single_cycle_patched/single_cycle_mips_source_initial/mips/mips.v"/>
+          <Attr Name="ImportTime" Val="1532882912"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -156,78 +234,8 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PSRCDIR/sources_1/imports/MIPS_single_cycle_patched/single_cycle_mips_source_initial/datapath/datapath.v">
-        <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../../Assignment_06/Lab6_Attachment1/MIPS_single_cycle_patched/single_cycle_mips_source_initial/datapath/datapath.v"/>
-          <Attr Name="ImportTime" Val="1571709198"/>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="implementation"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
-      <File Path="$PSRCDIR/sources_1/imports/MIPS_single_cycle_patched/single_cycle_mips_source_initial/control_unit/auxdec.v">
-        <FileInfo>
-          <Attr Name="AutoDisabled" Val="1"/>
-          <Attr Name="ImportPath" Val="$PPRDIR/../../Assignment_06/Lab6_Attachment1/MIPS_single_cycle_patched/single_cycle_mips_source_initial/control_unit/auxdec.v"/>
-          <Attr Name="ImportTime" Val="1529302800"/>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="implementation"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
-      <File Path="$PSRCDIR/sources_1/imports/MIPS_single_cycle_patched/single_cycle_mips_source_initial/control_unit/controlunit.v">
-        <FileInfo>
-          <Attr Name="AutoDisabled" Val="1"/>
-          <Attr Name="ImportPath" Val="$PPRDIR/../../Assignment_06/Lab6_Attachment1/MIPS_single_cycle_patched/single_cycle_mips_source_initial/control_unit/controlunit.v"/>
-          <Attr Name="ImportTime" Val="1532882706"/>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="implementation"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
-      <File Path="$PSRCDIR/sources_1/imports/MIPS_single_cycle_patched/single_cycle_mips_source_initial/memory/dmem.v">
-        <FileInfo>
-          <Attr Name="AutoDisabled" Val="1"/>
-          <Attr Name="ImportPath" Val="$PPRDIR/../../Assignment_06/Lab6_Attachment1/MIPS_single_cycle_patched/single_cycle_mips_source_initial/memory/dmem.v"/>
-          <Attr Name="ImportTime" Val="1571713020"/>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="implementation"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
-      <File Path="$PSRCDIR/sources_1/imports/MIPS_single_cycle_patched/single_cycle_mips_source_initial/memory/imem.v">
-        <FileInfo>
-          <Attr Name="AutoDisabled" Val="1"/>
-          <Attr Name="ImportPath" Val="$PPRDIR/../../Assignment_06/Lab6_Attachment1/MIPS_single_cycle_patched/single_cycle_mips_source_initial/memory/imem.v"/>
-          <Attr Name="ImportTime" Val="1529321836"/>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="implementation"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
-      <File Path="$PSRCDIR/sources_1/imports/MIPS_single_cycle_patched/single_cycle_mips_source_initial/control_unit/maindec.v">
-        <FileInfo>
-          <Attr Name="AutoDisabled" Val="1"/>
-          <Attr Name="ImportPath" Val="$PPRDIR/../../Assignment_06/Lab6_Attachment1/MIPS_single_cycle_patched/single_cycle_mips_source_initial/control_unit/maindec.v"/>
-          <Attr Name="ImportTime" Val="1529302754"/>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="implementation"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
-      <File Path="$PSRCDIR/sources_1/imports/MIPS_single_cycle_patched/single_cycle_mips_source_initial/mips/mips.v">
-        <FileInfo>
-          <Attr Name="AutoDisabled" Val="1"/>
-          <Attr Name="ImportPath" Val="$PPRDIR/../../Assignment_06/Lab6_Attachment1/MIPS_single_cycle_patched/single_cycle_mips_source_initial/mips/mips.v"/>
-          <Attr Name="ImportTime" Val="1532882912"/>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="implementation"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
       <File Path="$PSRCDIR/sources_1/imports/MIPS_single_cycle_patched/single_cycle_mips_source_initial/mips/mips_top.v">
         <FileInfo>
-          <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="ImportPath" Val="$PPRDIR/../../Assignment_06/Lab6_Attachment1/MIPS_single_cycle_patched/single_cycle_mips_source_initial/mips/mips_top.v"/>
           <Attr Name="ImportTime" Val="1571709156"/>
           <Attr Name="UsedIn" Val="synthesis"/>
@@ -235,25 +243,7 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PSRCDIR/sources_1/imports/MIPS_single_cycle_patched/single_cycle_mips_source_initial/testbench/tb_mips_top.v">
-        <FileInfo>
-          <Attr Name="AutoDisabled" Val="1"/>
-          <Attr Name="ImportPath" Val="$PPRDIR/../../Assignment_06/Lab6_Attachment1/MIPS_single_cycle_patched/single_cycle_mips_source_initial/testbench/tb_mips_top.v"/>
-          <Attr Name="ImportTime" Val="1571709111"/>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="implementation"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
-      <File Path="$PSRCDIR/sources_1/new/gpio_top.v">
-        <FileInfo>
-          <Attr Name="AutoDisabled" Val="1"/>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="implementation"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
-      <File Path="$PSRCDIR/sources_1/new/fact_top.v">
+      <File Path="$PSRCDIR/sources_1/new/NOTES.v">
         <FileInfo>
           <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="UsedIn" Val="synthesis"/>
@@ -269,7 +259,7 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PSRCDIR/sources_1/new/mux4.v">
+      <File Path="$PSRCDIR/sources_1/new/fact_top.v">
         <FileInfo>
           <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="UsedIn" Val="synthesis"/>
@@ -277,7 +267,15 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PSRCDIR/sources_1/new/NOTES.v">
+      <File Path="$PSRCDIR/sources_1/new/gpio_top.v">
+        <FileInfo>
+          <Attr Name="AutoDisabled" Val="1"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/new/mux4.v">
         <FileInfo>
           <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="UsedIn" Val="synthesis"/>
@@ -287,7 +285,7 @@
       </File>
       <Config>
         <Option Name="DesignMode" Val="RTL"/>
-        <Option Name="TopModule" Val="datapath"/>
+        <Option Name="TopModule" Val="mips_top"/>
       </Config>
     </FileSet>
     <FileSet Name="constrs_1" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
@@ -298,6 +296,15 @@
     </FileSet>
     <FileSet Name="sim_1" Type="SimulationSrcs" RelSrcDir="$PSRCDIR/sim_1">
       <Filter Type="Srcs"/>
+      <File Path="$PSRCDIR/sources_1/imports/MIPS_single_cycle_patched/single_cycle_mips_source_initial/testbench/tb_mips_top.v">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../Assignment_06/Lab6_Attachment1/MIPS_single_cycle_patched/single_cycle_mips_source_initial/testbench/tb_mips_top.v"/>
+          <Attr Name="ImportTime" Val="1571709111"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
       <File Path="$PSRCDIR/sim_1/imports/MIPS_single_cycle_patched/single_cycle_mips_source_initial/memdat.dat">
         <FileInfo>
           <Attr Name="ImportPath" Val="$PPRDIR/../../Assignment_06/Assignment_06/Assignment_06.srcs/sim_1/imports/MIPS_single_cycle_patched/single_cycle_mips_source_initial/memdat.dat"/>
@@ -314,6 +321,8 @@
         <Option Name="TransportPathDelay" Val="0"/>
         <Option Name="TransportIntDelay" Val="0"/>
         <Option Name="SrcSet" Val="sources_1"/>
+        <Option Name="Incremental" Val="0"/>
+        <Option Name="NLNetlistMode" Val="funcsim"/>
       </Config>
     </FileSet>
     <FileSet Name="utils_1" Type="Utils" RelSrcDir="$PSRCDIR/utils_1">
@@ -344,10 +353,10 @@
   <Runs Version="1" Minor="10">
     <Run Id="synth_1" Type="Ft3:Synth" SrcSet="sources_1" Part="xc7a100tcsg324-1" ConstrsSet="constrs_1" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" State="current" Dir="$PRUNDIR/synth_1" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2019">
-          <Desc>Vivado Synthesis Defaults</Desc>
-        </StratHandle>
-        <Step Id="synth_design"/>
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2019"/>
+        <Step Id="synth_design">
+          <Option Id="KeepEquivalentRegisters">1</Option>
+        </Step>
       </Strategy>
       <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
       <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2019"/>
@@ -355,9 +364,7 @@
     </Run>
     <Run Id="impl_1" Type="Ft2:EntireDesign" Part="xc7a100tcsg324-1" ConstrsSet="constrs_1" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" State="current" SynthRun="synth_1" IncludeInArchive="true" GenFullBitstream="true">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2019">
-          <Desc>Default settings for Implementation.</Desc>
-        </StratHandle>
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2019"/>
         <Step Id="init_design"/>
         <Step Id="opt_design"/>
         <Step Id="power_opt_design"/>
@@ -372,9 +379,7 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
     </Run>
   </Runs>
-  <Board>
-    <Jumpers/>
-  </Board>
+  <Board/>
   <DashboardSummary Version="1" Minor="0">
     <Dashboards>
       <Dashboard Name="default_dashboard">

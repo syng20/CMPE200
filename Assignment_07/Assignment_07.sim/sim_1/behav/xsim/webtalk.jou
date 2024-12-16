@@ -1,12 +1,12 @@
 #-----------------------------------------------------------
-# Webtalk v2019.1 (64-bit)
-# SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
-# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
-# Start of session at: Thu Nov 14 17:24:33 2024
-# Process ID: 20092
-# Current directory: C:/Users/saman/Documents/Coding/CMPE200/Assignment_06/Assignment_06/Assignment_06.sim/sim_1/behav/xsim
-# Command line: wbtcv.exe -mode batch -source C:/Users/saman/Documents/Coding/CMPE200/Assignment_06/Assignment_06/Assignment_06.sim/sim_1/behav/xsim/xsim.dir/tb_mips_top_behav/webtalk/xsim_webtalk.tcl -notrace
-# Log file: C:/Users/saman/Documents/Coding/CMPE200/Assignment_06/Assignment_06/Assignment_06.sim/sim_1/behav/xsim/webtalk.log
-# Journal file: C:/Users/saman/Documents/Coding/CMPE200/Assignment_06/Assignment_06/Assignment_06.sim/sim_1/behav/xsim\webtalk.jou
+# Webtalk v2019.1.1 (64-bit)
+# SW Build 2580384 on Sat Jun 29 08:12:21 MDT 2019
+# IP Build 2579722 on Sat Jun 29 11:35:40 MDT 2019
+# Start of session at: Sun Dec 15 16:24:21 2024
+# Process ID: 11064
+# Current directory: D:/H L/Sam/Assignment_07/Assignment_07/Assignment_07.sim/sim_1/behav/xsim
+# Command line: wbtcv.exe -mode batch -source D:/H L/Sam/Assignment_07/Assignment_07/Assignment_07.sim/sim_1/behav/xsim/xsim.dir/tb_mips_top_behav/webtalk/xsim_webtalk.tcl -notrace
+# Log file: D:/H L/Sam/Assignment_07/Assignment_07/Assignment_07.sim/sim_1/behav/xsim/webtalk.log
+# Journal file: D:/H L/Sam/Assignment_07/Assignment_07/Assignment_07.sim/sim_1/behav/xsim\webtalk.jou
 #-----------------------------------------------------------
-source C:/Users/saman/Documents/Coding/CMPE200/Assignment_06/Assignment_06/Assignment_06.sim/sim_1/behav/xsim/xsim.dir/tb_mips_top_behav/webtalk/xsim_webtalk.tcl -notrace
+source D:/H -notrace

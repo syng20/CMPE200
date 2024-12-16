@@ -1,3 +1,5 @@
+`timescale 1ns / 1ps 
+
 module auxdec (
         input  wire [1:0] alu_op,
         input  wire [5:0] funct,

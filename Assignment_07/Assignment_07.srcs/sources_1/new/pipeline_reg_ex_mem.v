@@ -33,7 +33,7 @@ module pipeline_reg_ex_mem(
     input  wire        mflo_in,
     input  wire        mfhi_in,
     input  wire [31:0] pc_plus4_in,
-    input  wire [31:0] pc_pre_pre_in, 
+    input  wire [31:0] bta_in, 
     input  wire [31:0] jta_in,
     input  wire        zero_in,
     input  wire [31:0] alu_out_in,
@@ -52,7 +52,7 @@ module pipeline_reg_ex_mem(
     output reg         mflo_out,
     output reg         mfhi_out,
     output reg  [31:0] pc_plus4_out,
-    output reg  [31:0] pc_pre_pre_out, 
+    output reg  [31:0] bta_out, 
     output reg  [31:0] jta_out,
     output reg         zero_out,
     output reg  [31:0] alu_out_out,
@@ -76,7 +76,7 @@ module pipeline_reg_ex_mem(
             mflo_out = 0; 
             mfhi_out = 0; 
             pc_plus4_out = 32'b0; 
-            pc_pre_pre_out = 32'b0; 
+            bta_out = 32'b0; 
             jta_out = 32'b0; 
             zero_out = 0; 
             alu_out_out = 32'b0; 
@@ -97,7 +97,7 @@ module pipeline_reg_ex_mem(
             mflo_out = mflo_in;
             mfhi_out = mfhi_in;
             pc_plus4_out = pc_plus4_in;
-            pc_pre_pre_out = pc_pre_pre_in; 
+            bta_out = bta_in; 
             jta_out = jta_in;
             zero_out = zero_in; 
             alu_out_out = alu_out_in;

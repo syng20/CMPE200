@@ -1,3 +1,5 @@
+`timescale 1ns / 1ps 
+
 module maindec (
         input  wire [5:0] opcode,
         output wire       branch,
@@ -25,7 +27,8 @@ module maindec (
             6'b10_1011: ctrl = 10'b0_0_0_0_1_1_0_00_0; // SW
             6'b10_0011: ctrl = 10'b0_0_0_1_1_0_1_00_0; // LW
             // NEW OPCODE FOR JAL 
-            6'b00_0011: ctrl = 10'bx_1_x_1_x_0_0_xx_1; // JAL 
+//            6'b00_0011: ctrl = 10'bx_1_x_1_x_0_0_xx_1; // JAL 
+            6'b00_0011: ctrl = 10'b1_1_0_1_0_0_0_00_1; // JAL 
             default:    ctrl = 10'bx_x_x_x_x_x_x_xx_x;
         endcase
     end

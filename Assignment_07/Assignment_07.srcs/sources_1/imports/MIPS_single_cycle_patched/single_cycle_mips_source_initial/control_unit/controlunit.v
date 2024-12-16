@@ -1,3 +1,5 @@
+`timescale 1ns / 1ps 
+
 module controlunit (
         input  wire [5:0]  opcode,
         input  wire [5:0]  funct,
@@ -10,7 +12,6 @@ module controlunit (
         output wire        dm2reg,
         output wire [3:0]  alu_ctrl, // EDIT: CHANGED NUMBER OF BITS 
         // EDIT: ADDED NEW INPUT AND OUTPUTS 
-        input  wire [4:0]  shamt,
         output wire        jal,
         output wire        jr,
         output wire        mfhi,

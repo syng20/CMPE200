@@ -60,9 +60,16 @@ module pipeline_reg_id_ex(
     output reg  [31:0] instr_out
     );    
     
-    always @(posedge clk, posedge rst, posedge flushE) begin
+    reg taken; 
+    initial begin 
+        taken = 0; 
+    end 
+    
+    always @(posedge clk, posedge rst) begin
+    
+        if (flushE || taken) taken = taken + 1;
         
-        if (rst || flushE) begin 
+        if (rst || (taken > 0)) begin 
             dm2reg_out = 0; 
             we_dm_out = 0; 
             branch_out = 0; 
@@ -100,6 +107,8 @@ module pipeline_reg_id_ex(
             rd2_out = rd2_in;
             instr_out = instr_in;
         end 
+        
+        if (taken == 2) taken = 0; 
         
     end 
     

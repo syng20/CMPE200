@@ -1,3 +1,5 @@
+`timescale 1ns / 1ps 
+
 module mips_top (
         input  wire        clk,
         input  wire        rst,
@@ -19,10 +21,10 @@ module mips_top (
             .ra3            (ra3),
             .instr          (instr),
             .rd_dm          (rd_dm),
-            .we_dm          (we_dm),
+            .we_dmM         (we_dm),
             .pc_current     (pc_current),
-            .alu_out        (alu_out),
-            .wd_dm          (wd_dm),
+            .alu_outM       (alu_out),
+            .wd_dmM         (wd_dm),
             .rd3            (rd3)
         );
 
