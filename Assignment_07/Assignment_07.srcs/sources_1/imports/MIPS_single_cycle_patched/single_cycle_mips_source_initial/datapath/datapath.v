@@ -137,7 +137,7 @@ module datapath (
     dreg_en pc_reg (
             .clk            (clk),
             .rst            (rst),
-            .en             (stallF), 
+            .en             (!stallF), 
             .d              (pc_next),
             .q              (pc_current)
         );

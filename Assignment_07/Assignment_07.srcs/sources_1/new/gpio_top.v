@@ -21,15 +21,54 @@
 
 
 module gpio_top(
-    input clk,
-    input rst,
-    input WE,
-    input [1:0] A,
-    input [31:0] WD,
-    input [31:0] gpI1,
-    input [31:0] gpI2,
-    output [31:0] RD,
-    output [31:0] gpO1,
-    output [31:0] gpO2
+    input  wire        clk,
+    input  wire        rst,
+    input  wire        WE,
+    input  wire  [1:0] A,
+    input  wire [31:0] WD,
+    input  wire [31:0] gpI1,
+    input  wire [31:0] gpI2,
+    output wire [31:0] RD,
+    output wire [31:0] gpO1,
+    output wire [31:0] gpO2
     );
+    
+    wire        WE1; 
+    wire        WE2; 
+    wire  [1:0] RdSel; 
+    
+    gpio_ad addr (
+            .A          (A), 
+            .WE         (WE), 
+            .WE1        (WE1), 
+            .WE2        (WE2), 
+            .RdSel      (RdSel)
+    );
+    
+    dreg_en #(32) gp1_reg (
+            .clk        (clk), 
+            .rst        (rst), 
+            .en         (WE1), 
+            .d          (WD), 
+            .q          (gpO1)
+    ); 
+    
+    dreg_en #(32) gp2_reg (
+            .clk        (clk), 
+            .rst        (rst), 
+            .en         (WE2), 
+            .d          (WD), 
+            .q          (gpO2)
+    ); 
+    
+    mux4 gpio_mux (
+            .RdSel      (RdSel), 
+            .a          (gpI1), 
+            .b          (gpI2), 
+            .c          (gpO1), 
+            .d          (gpO2), 
+            .y          (RD)
+    ); 
+    
+    
 endmodule

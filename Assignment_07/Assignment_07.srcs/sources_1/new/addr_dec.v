@@ -26,19 +26,17 @@ module addr_dec(
     output reg         WEM,
     output reg         WE1,
     output reg         WE2,
-    output reg   [1:0] RdSel
+    output wire  [1:0] RdSel
     );
     
     wire [1:0] c; 
     
     // 0 vs 8 vs 9 
-    assign c = {A[11], A[8]}; 
+    assign RdSel = {A[11], A[8]}; 
     
-    always @(WE, A) begin
-        // send to mux 
-        RdSel = c; 
+    always @(WE, RdSel) begin
         // which memory to enable 
-        case (c) 
+        case (RdSel) 
             2'b00: begin 
                 WEM = 1; 
                 WE1 = 0; 

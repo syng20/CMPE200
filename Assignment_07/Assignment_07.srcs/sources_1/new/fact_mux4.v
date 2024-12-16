@@ -3,9 +3,9 @@
 // Company: 
 // Engineer: 
 // 
-// Create Date: 12/04/2024 01:46:34 PM
+// Create Date: 12/15/2024 09:31:10 PM
 // Design Name: 
-// Module Name: mux4
+// Module Name: fact_mux4
 // Project Name: 
 // Target Devices: 
 // Tool Versions: 
@@ -20,25 +20,24 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module mux4 #(parameter WIDTH = 8)(
-    input  wire [1:0]       RdSel,
-    input  wire [WIDTH-1:0] a,
-    input  wire [WIDTH-1:0] b,
-    input  wire [WIDTH-1:0] c,
-    input  wire [WIDTH-1:0] d,
-    output reg  [WIDTH-1:0] y
+module fact_mux4 (
+    input  wire  [1:0] RdSel,
+    input  wire  [3:0] n,
+    input  wire        go,
+    input  wire [31:0] res,
+    input  wire        res_done,
+    input  wire        res_err,
+    output reg  [31:0] RD
     );
     
     always @(*) begin 
         case(RdSel) 
-            2'b00: y = a; 
-            2'b01: y = b; 
-            2'b10: y = c; 
-            2'b11: y = d; 
-            default: y = a; 
+            2'b00: RD = {28'b0, n}; 
+            2'b01: RD = {31'b0, go}; 
+            2'b10: RD = {30'b0, res_err, res_done}; 
+            2'b11: RD = res; 
+            default: RD = 32'bx;  
         endcase
     end 
-    
-    
     
 endmodule

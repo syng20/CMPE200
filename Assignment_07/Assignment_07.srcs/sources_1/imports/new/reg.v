@@ -3,9 +3,9 @@
 // Company: 
 // Engineer: 
 // 
-// Create Date: 12/04/2024 06:07:36 PM
+// Create Date: 09/14/2024 12:33:55 PM
 // Design Name: 
-// Module Name: dreg_en
+// Module Name: clocked_reg
 // Project Name: 
 // Target Devices: 
 // Tool Versions: 
@@ -20,17 +20,24 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module dreg_en # (parameter WIDTH = 32) (
-        input  wire             clk,
-        input  wire             rst,
-        input  wire             en, 
-        input  wire [WIDTH-1:0] d,
-        output reg  [WIDTH-1:0] q
+module clocked_reg(
+    input [31:0] D,
+    input load_reg,
+    input clk,
+    output reg [31:0] Q
     );
-
-    always @ (posedge clk, posedge rst, negedge en) begin
-        if (rst) q <= 0;
-        else if (en) q <= d; 
-        else q <= q; 
+    
+    reg [31:0] internal; 
+    
+    always @(posedge clk) begin
+    
+        if (load_reg) begin 
+            internal <= D; 
+            Q <= D; 
+        end else begin 
+            Q <= internal; 
+        end 
+        
     end
+    
 endmodule
